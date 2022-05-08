@@ -90,3 +90,37 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+=======
+# hackernews-async-ts
+
+[Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
+
+## QuickStart
+
+### Development
+
+```bash
+$ npm i
+$ npm run dev
+$ open http://localhost:7001/
+```
+
+Don't tsc compile at development mode, if you had run `tsc` then you need to `npm run clean` before `npm run dev`.
+
+### Deploy
+
+```bash
+$ npm run tsc
+$ npm start
+```
+
+### Npm Scripts
+
+- Use `npm run lint` to check code style
+- Use `npm test` to run unit test
+- se `npm run clean` to clean compiled js at development mode once
+
+### Requirement
+
+- Node.js 8.x
+- Typescript 2.8+
