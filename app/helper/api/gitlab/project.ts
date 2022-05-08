@@ -45,7 +45,7 @@ module.exports = (app) => {
         return status;
     };
     const getProject = async ({ id, access_token }) => {
-        console.log(666,id,access_token)
+        // console.log(666,id,access_token)
         const project = await http(app).methodV({
             url: `/projects/${id}`,
             method: "GET",

@@ -23,19 +23,21 @@ export default (app) => {
         },
         async methodV({url, method, params = {}, query = {}}): Promise<Response> {
             const sendUrl = `${baseUrl}/api/v4/${url}?${qs.stringify(query)}`;
-            try {
-                const { data, code } = await app.curl(sendUrl, {
+            // try {
+                const { data, status: code } = await app.curl(sendUrl, {
                     dataType: 'json',
                     method,
                     data: params
                 })
+                console.log(3333,data, code)
+                if(code!==200 && code !==201) throw new Error(data.message)
                 return { data, code };
-            } catch(err) {
-                return {
-                    code: -1,
-                    data: err
-                }
-            }
+            // } catch(err) {
+            //     return {
+            //         code: -1,
+            //         data: err
+            //     }
+            // }
         }
     }
 }

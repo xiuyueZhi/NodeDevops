@@ -15,9 +15,10 @@ export default () => {
                 ctx.user = deCode;
                 await next();
             } catch(err) {
-                ctx.code = 401;
+                console.log(9999,err)
+                // ctx.code = 401;
                 ctx.body = {
-                    code: 401,
+                    code: 501,
                     message: err.message
                 }
             }

@@ -8,7 +8,7 @@ export default class ProjectController extends BaseController {
         const { ctx } = this;
         // const { id: userId } = this.user;
         const { pageSize, pageNum } = query;
-        console.log(222,this.token)
+        // console.log(222,this.token)
         const projectList = await ctx.service.projectService.getProjectList({
             pageSize,
             pageNum,

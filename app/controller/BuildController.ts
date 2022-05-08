@@ -12,6 +12,7 @@ export default class BuildController extends BaseController {
         const { ctx } = this;
         const { access_token: accessToken } = this.token;
         const {
+            id,
             projectId,
             branchName,
             projectVersion,
@@ -34,6 +35,14 @@ export default class BuildController extends BaseController {
             buildPath,
             cache,
         });
+        await ctx.service.branchService.updateBranch({
+            branchIds: id,
+            opt: {
+                branchStatus: 2,
+            },
+        });
+        await ctx.helper.robot.ding.text({content: `项目：${project.projectGitName}，分支：${branchName} 开始构建 `});
+        // this.success({});
         // console.log(11111,callBack)
         this.success(callBack)
     }

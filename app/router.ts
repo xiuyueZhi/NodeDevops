@@ -14,5 +14,7 @@ export default (app: Application) => {
   const { io } = app;
   EggShell(app)
   // socket.io
-  io.of('/').route('server', io.controller?.nsp?.ping);
+  console.log( io.controller)
+  io.of('/').route('io/server', io.controller.nsp.ping);
+  io.of('/').route('creatJob', io.controller.nsp.creatJob);
 }

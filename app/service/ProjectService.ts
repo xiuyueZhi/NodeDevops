@@ -66,12 +66,12 @@ export default class ProjectService extends Service {
             },
             raw: true,
         });
-        console.log(8888,selfProject,accessToken)
+        // console.log(8888,selfProject,accessToken)
         const project = await ctx.helper.api.gitlab.project.getProject({
             id: selfProject.projectSourceId,
             access_token: accessToken
         });
-        console.log(777,project)
+        // console.log(777,project)
         return { ...selfProject, ...project };
     }
 }
